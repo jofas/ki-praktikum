@@ -72,21 +72,26 @@ class Population:
         )
 
     def crossover(self):
-        for i in range(0,self.size,2):
-            crossover_point = \
-                random.randint(0,self.genes - 1)
+        try:
+            for i in range(0,self.size,2):
+                crossover_point = \
+                    random.randint(0,self.genes - 1)
 
-            msb_individuum_x, lsb_individuum_x = \
-                self.population[i].split(crossover_point)
+                msb_individuum_x, lsb_individuum_x = \
+                    self.population[i].split(
+                        crossover_point)
 
-            msb_individuum_y, lsb_individuum_y = \
-                self.population[i+1].split(crossover_point)
+                msb_individuum_y, lsb_individuum_y = \
+                    self.population[i+1].split(
+                        crossover_point)
 
-            self.population[i] = Individuum(
-                msb_individuum_x + lsb_individuum_y)
+                self.population[i] = Individuum(
+                    msb_individuum_x + lsb_individuum_y)
 
-            self.population[i+1] = Individuum(
-                msb_individuum_y + lsb_individuum_x)
+                self.population[i+1] = Individuum(
+                    msb_individuum_y + lsb_individuum_x)
+        except IndexError:
+            return
 
     def mutate(self):
         for i in range(self.size):
@@ -105,7 +110,7 @@ class Population:
         return False
 
 def main():
-    print(Population(1000,8,0.1).run())
+    print(Population(1001,8,0.1).run())
 
 if __name__ == '__main__':
     main()
