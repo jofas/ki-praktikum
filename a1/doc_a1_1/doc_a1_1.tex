@@ -1,0 +1,185 @@
+\documentclass[12pt, twoside]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[colorlinks=true, linkcolor=black]{hyperref} % Links
+\usepackage{makeidx} % Indexierung
+\usepackage{siunitx}
+\usepackage[ngerman]{babel} % deutsche Sonderzeichen
+\usepackage[utf8]{inputenc}
+\usepackage{geometry} % Dokumentendesign wie Seiten- oder Zeilenabstand bestimmen
+\usepackage[toc,page]{appendix}
+
+% Graphiken
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfcore}
+\usepackage{pgfopts}
+\usepackage{pgfornament}
+\usepackage{pgf}
+\usepackage{ifthen}
+\usepackage{booktabs}
+
+% Tabellen
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{colortbl} % Tabellen faerben
+\usepackage{multirow}
+\usepackage{diagbox} % Tabellenzelle diagonal splitten
+
+\usepackage{xcolor} % Farben
+\usepackage[framemethod=tikz]{mdframed} % Hintergrunderstellung
+\usepackage{enumitem} % Enumerate mit Buchstaben nummerierbar machen
+\usepackage{pdfpages}
+\usepackage{listings} % Source-Code darstellen
+\usepackage{eurosym} % Eurosymbol
+\usepackage[square,numbers]{natbib}
+\usepackage{here} % figure an richtiger Stelle positionieren
+\usepackage{verbatim} % Blockkommentare mit \begin{comment}...\end{comment}
+\usepackage{ulem} % \sout{} (durchgestrichener Text)
+
+% BibLaTex
+\bibliographystyle{acm}
+
+% Aendern des Anhangnamens (Seite und Inhaltsverzeichnis)
+\renewcommand\appendixtocname{Anhang}
+\renewcommand\appendixpagename{Anhang}
+
+% mdframed Style
+\mdfdefinestyle{codebox}{
+	linewidth=2.5pt,
+	linecolor=codebordercolor,
+	backgroundcolor=codecolor,
+	shadow=true,
+	shadowcolor=black!40!white,
+	fontcolor=black,
+	everyline=true,
+}
+
+% Seitenabstaende
+\geometry{left=15mm,right=15mm,top=15mm,bottom=20mm}
+
+% TikZ Bibliotheken
+\usetikzlibrary{
+    arrows,
+    arrows.meta,
+    decorations,
+    backgrounds,
+    positioning,
+    fit,
+    petri,
+    shadows,
+    datavisualization.formats.functions,
+    calc,
+    shapes,
+    shapes.multipart
+}
+
+\pgfplotsset{width=7cm,compat=1.15}
+
+\definecolor{codecolor}{HTML}{EEEEEE}
+\definecolor{codebordercolor}{HTML}{CCCCCC}
+
+% Standardeinstellungen fuer Source-Code
+\lstset{
+    language=C,
+    breaklines=true,
+    keepspaces=true,
+    keywordstyle=\bfseries\color{green!70!black},
+    basicstyle=\ttfamily\color{black},
+    commentstyle=\itshape\color{purple},
+    identifierstyle=\color{blue},
+    stringstyle=\color{orange},
+    showstringspaces=false,
+    rulecolor=\color{black},
+    tabsize=2,
+    escapeinside={\%*}{*\%},
+}
+
+%\input{libuml}
+%\input{liberm}
+
+\begin{document}
+
+\begin{center}
+  \Huge{Praktikum Künstliche Intelligenz} \\
+  \huge{Team D Rot} \\
+  \Large{Aufgabe 1.1} \\
+\end{center}
+
+\begin{enumerate}[label={\textbf{\alph*)}}]
+
+  \item \textbf{Entscheiden Sie sich f\"ur eine sinnvolle
+          Fitnessfunktion und eine sinnvolle
+          Abbruchbedingung f\"ur den Algorithmus}
+
+        Sei die Relation aller Gene $G \in \mathbb{Z}
+        \times \mathbb{N} := \{(1,100), (2,10), (3, -50),
+        (4, 200)\}$. Gesucht ist eine Folge von acht Genen
+        $S_{max} \in S$ ($S$ die Menge aller Gensequenzen
+        mit l\"ange acht und jedes Element in $G$), die die
+        h\"ochste Zahl bilden:
+        $S_{max} = max(\Sigma_{j=1}^{8} G[S_{ij}]), S_{i}
+        \in S, G[x] \in \{-50,10,100,200\}, x \in \{1,2,3,4
+        \}$, wobei in diesem Fall
+        $\Sigma_{j=1}^{8} G[S_{ij}],S_{i} \in S$ unsere
+        Fitnessfunktion darstellt.
+
+        Eine sinnvole Abbruchbedingung w\"are, wenn
+        $S_{max}$ gefunden ist.
+
+  \item \textbf{Wie lautet der genetische Code des
+          perfekten Individuums?}
+
+        $S_{max} = [4, 4, 4, 4, 4, 4, 4, 4]$
+
+  \item \textbf{Wie hoch ist die Wahrscheinlichkeit, dass
+          dieses Individuum in unser zuf\"allig generierten
+          ersten Generation bereits ein- oder mehrmals
+          enthalten ist?}
+
+        Die Anzahl an Individuen unserer ersten Population
+        $P$ betr\"agt 1000.
+
+        Die Wahrscheinlichkeit $S_{max} \in P$ liegt damit
+        bei:
+
+        \begin{align*}
+          W(S_{max}) &= \frac{1}{|G|^{8}} = \frac{1}{4^8}
+                     = \frac{1}{65536} \\
+          W(S_{max} \in P) &= \frac{|P|}{|G|^{8}} =
+                      \frac{1000}{4^8} = \frac{1000}{65536}
+        \end{align*}
+
+  \item[\textbf{e)}] \textbf{Welche Gefahr best\"unde, wenn
+          wir auf den Mutationsschritt verzichten
+          w\"urden?}
+
+        Bei einer schlechten ersten Generation besteht die
+        Gefahr, dass, dadurch, dass keine Mutation
+        angewendet wird, die folgenden Generationen nicht
+        f\"ahig sind, $S_{max}$ zu bilden. Gelete
+        beispielsweise: $\forall S_i \in P, S_{i1} \neq 4$,
+        k\"onnte $S_{max}$ nicht gebildet werden, da nie
+        eine 4 an erster Stelle der Sequenz stehen kann.
+
+  \item[\textbf{f)}] \textbf{Welche \"Anderung w\"urden Sie
+          vornehmen, um den oben beschriebenen Algorithmus
+          zu optimieren?}
+
+        Wir w\"urden erst das Element aus $G$ suchen, dass
+        maximal ist und dieses acht mal mit sich selbst
+        addieren.
+
+        Falls es ein genetischer Ansatz sein soll, w\"urden
+        wir anstatt Single-Point-Crossover einen Ansatz
+        verfolgen, bei dem wir zwei Individuuen sich so
+        fortpflanzen lassen, dass ein neues Individuum
+        entsteht, welches an jeder Stelle seiner Gensequenz
+        das Maximum seiner Eltern hat. Jede Generation, die
+        sich durch diesen Schritt halbieren w\"urde, wird
+        mit neuen, zuf\"alligen Individuen
+        angereichert.
+
+\end{enumerate}
+
+\end{document}
