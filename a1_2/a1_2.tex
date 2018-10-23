@@ -1,0 +1,66 @@
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\begin{frame}
+  \begin{center}
+    \Huge{Praktikum K\"unstliche Intelligenz} \\
+    \vspace{1.5cm}
+    \huge{Team D Rot} \\
+    \vspace{1.5cm}
+    \Large{Aufgabe 1.2}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
+  Content.
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{b)} Fitnessfunktion}
+
+  Sei $S_{max}$ perfektes Individuum (Gensequenz). \\
+
+  Distanzfunktion zwischen zwei Genen $x$ und $y$:
+  \begin{align*}
+    d(x,y) =
+      \begin{cases}
+        1 & \quad \text{falls } x = y \\
+        0 & \quad \text{falls } x \neq y
+      \end{cases}
+  \end{align*}
+
+  Fittnesfunktion eines Individuums $S$:
+
+  \begin{align*}
+    f(S) = \frac{\Sigma_{j=1}^{|S|} d(S_{j},S_{max_j})}
+                {|S|}
+  \end{align*}
+  \textbf{Beispiel} \\
+    \vspace{0.5cm}
+    Sei $S_{max} := [ A, A, B ]$, $S := [A, C, A]$. \\
+    \vspace{0.5cm}
+    $f(S) = \frac{d(A,A) + d(C, A) + d(A, B)}{3}
+           = \frac{1 + 0 + 0}{3} = \frac{1}{3}$
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{c)} Gene}
+  Content.
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{d)} Einsch\"atzung zur Optimierung}
+  Content.
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{e)} In Realit\"at anwendbar?}
+  Content.
+\end{frame}
+
+\end{document}
