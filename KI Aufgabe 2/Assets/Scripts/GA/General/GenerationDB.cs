@@ -82,7 +82,7 @@ public class GenerationDB : MonoBehaviour {
     public void UpdateHighScoreList(Generation gen)
     {
         topIndividuals.AddRange(gen.Individuals);
-        topIndividuals.Sort((x, y) => x.fitnessValue.CompareTo(y.fitnessValue));
+        topIndividuals.Sort((y, x) => x.fitnessValue.CompareTo(y.fitnessValue));
         topIndividuals.RemoveRange(10, topIndividuals.Count - 10);
         HighScoreManager.SetHighScores(topIndividuals);
     }
@@ -130,7 +130,7 @@ public class GenerationDB : MonoBehaviour {
 
         public void Sort()
         {
-            individuals.Sort((x, y) => x.Fitness.CompareTo(y.Fitness));
+            individuals.Sort((y, x) => x.Fitness.CompareTo(y.Fitness));
         }
 
         public Individual NotFittest

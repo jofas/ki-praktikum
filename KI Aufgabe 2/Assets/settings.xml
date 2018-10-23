@@ -7,6 +7,13 @@
     <Gene>GeneC</Gene>
     <Gene>GeneD</Gene>
     <Gene>GeneE</Gene>
+    <Gene>GeneS</Gene>
+    <Gene>GeneT</Gene>
+    <Gene>GeneU</Gene>
+    <Gene>GeneV</Gene>
+    <Gene>GeneW</Gene>
+    <Gene>GeneX</Gene>
+    <Gene>GeneY</Gene>
   </Genes>
   <SelectedGenes>
     <Setting>GeneA</Setting>
@@ -14,19 +21,25 @@
     <Setting>GeneC</Setting>
     <Setting>GeneD</Setting>
     <Setting>GeneE</Setting>
+    <Setting>GeneS</Setting>
+    <Setting>GeneT</Setting>
+    <Setting>GeneU</Setting>
+    <Setting>GeneV</Setting>
+    <Setting>GeneW</Setting>
+    <Setting>GeneX</Setting>
+    <Setting>GeneY</Setting>
   </SelectedGenes>
   <Initializers>
     <Initializer>AInit</Initializer>
+    <Initializer>InitRecursive</Initializer>
     <Initializer>RandomInitializer</Initializer>
   </Initializers>
-  <SelectedInitializer>AInit</SelectedInitializer>
+  <SelectedInitializer>InitRecursive</SelectedInitializer>
   <FitnessFunctions>
     <FitnessFunctions>DummyFitness</FitnessFunctions>
-    <FitnessFunctions>NoCollisionFitness</FitnessFunctions>
-    <FitnessFunctions>StandardFitness</FitnessFunctions>
-    <FitnessFunctions>ZeroVelocityFitness</FitnessFunctions>
+    <FitnessFunctions>HighestFitness</FitnessFunctions>
   </FitnessFunctions>
-  <SelectedFitnessFunction>DummyFitness</SelectedFitnessFunction>
+  <SelectedFitnessFunction>HighestFitness</SelectedFitnessFunction>
   <Selectors>
     <Selector>DummySelector</Selector>
     <Selector>RandomSelector</Selector>
@@ -35,21 +48,20 @@
   <SelectedSelector>RRSelector</SelectedSelector>
   <Recombiners>
     <Recombiner>DummyRecombiner</Recombiner>
-    <Recombiner>OnePointRecombiner</Recombiner>
-    <Recombiner>RandomRecombiner</Recombiner>
-    <Recombiner>TwoPointRecombiner</Recombiner>
+    <Recombiner>SPCOCombiner</Recombiner>
+    <Recombiner>UniformCrossover</Recombiner>
   </Recombiners>
-  <SelectedRecombiner>DummyRecombiner</SelectedRecombiner>
+  <SelectedRecombiner>SPCOCombiner</SelectedRecombiner>
   <Mutators>
     <Mutator>DummyMutator</Mutator>
-    <Mutator>InversionMutatorcs</Mutator>
     <Mutator>RandomMutator</Mutator>
+    <Mutator>SwapMutationWithRRs</Mutator>
   </Mutators>
-  <SelectedMutator>DummyMutator</SelectedMutator>
+  <SelectedMutator>SwapMutationWithRRs</SelectedMutator>
   <Terminators>
     <Terminator>DummyTerminator</Terminator>
-    <Terminator>OverNineThousand</Terminator>
+    <Terminator>IndividualHigherThan</Terminator>
     <Terminator>TestTerm</Terminator>
   </Terminators>
-  <SelectedTerminator>DummyTerminator</SelectedTerminator>
+  <SelectedTerminator>IndividualHigherThan</SelectedTerminator>
 </Settings>
