@@ -112,17 +112,21 @@
           Fitnessfunktion und eine sinnvolle
           Abbruchbedingung f\"ur den Algorithmus}
 
-        Sei die Relation aller Gene $G \in \mathbb{Z}
-        \times \mathbb{N} := \{(1,100), (2,10), (3, -50),
-        (4, 200)\}$. Gesucht ist eine Folge von acht Genen
-        $S_{max} \in S$ ($S$ die Menge aller Gensequenzen
-        mit l\"ange acht und jedes Element in $G$), die die
+        Sei $\mathbb{K} \subseteq \mathbb{N}:=\{1,2,3,4\}$,
+        $\mathbb{V} \subseteq \mathbb{Z} := \{-50,10,100,
+        200\}$ und die Relation aller Gene $G \subseteq
+        \mathbb{K} \times \mathbb{V} := \{(1,100), (2,10),
+        (3, -50),(4, 200)\}$. Gesucht ist eine Folge von
+        acht Genen $S_{max} \in \mathbb{S}^8$
+        ($\mathbb{S}^8$ die Menge aller Gensequenzen mit
+        l\"ange acht und jedem Element in $G$), die die
         h\"ochste Zahl bilden:
         $S_{max} = max(\Sigma_{j=1}^{8} G[S_{ij}]), S_{i}
-        \in S, G[x] \in \{-50,10,100,200\}, x \in \{1,2,3,4
-        \}$, wobei in diesem Fall
-        $\Sigma_{j=1}^{8} G[S_{ij}],S_{i} \in S$ unsere
-        Fitnessfunktion darstellt.
+        \in \mathbb{S}^8, G[x] \in \mathbb{V}, x \in
+        \mathbb{K}$,
+        wobei in diesem Fall
+        $\Sigma_{j=1}^{8} G[S_{ij}],S_{i} \in \mathbb{S}^8$
+        unsere Fitnessfunktion darstellt.
 
         Eine sinnvole Abbruchbedingung w\"are, wenn
         $S_{max}$ gefunden ist.
@@ -138,16 +142,16 @@
           enthalten ist?}
 
         Die Anzahl an Individuen unserer ersten Population
-        $P$ betr\"agt 1000.
+        $\mathbb{P}$ betr\"agt 1000.
 
-        Die Wahrscheinlichkeit $S_{max} \in P$ liegt damit
-        bei:
+        Die Wahrscheinlichkeit $S_{max} \in \mathbb{P}$
+        liegt damit bei:
 
         \begin{align*}
-          W(S_{max}) &= \frac{1}{|G|^{8}} = \frac{1}{4^8}
+          p(S_{max}) &= \frac{1}{|G|^{8}} = \frac{1}{4^8}
                      = \frac{1}{65536} \\
-          W(S_{max} \in P) &= \frac{|P|}{|G|^{8}} =
-                      \frac{1000}{4^8} = \frac{1000}{65536}
+          p(S_{max} \in \mathbb{P}) &= \frac{|P|}{|G|^{8}}
+                     =\frac{1000}{4^8} = \frac{1000}{65536}
         \end{align*}
 
   \item[\textbf{e)}] \textbf{Welche Gefahr best\"unde, wenn
@@ -157,10 +161,11 @@
         Bei einer schlechten ersten Generation besteht die
         Gefahr, dass, dadurch, dass keine Mutation
         angewendet wird, die folgenden Generationen nicht
-        f\"ahig sind, $S_{max}$ zu bilden. Gelete
-        beispielsweise: $\forall S_i \in P, S_{i1} \neq 4$,
-        k\"onnte $S_{max}$ nicht gebildet werden, da nie
-        eine 4 an erster Stelle der Sequenz stehen kann.
+        f\"ahig sind, $S_{max}$ zu bilden. Gelte
+        beispielsweise: $\forall S_i \in \mathbb{P}, S_{i1}
+        \neq 4$, k\"onnte $S_{max}$ nicht gebildet werden,
+        da nie eine 4 an erster Stelle der Sequenz stehen
+        kann.
 
   \item[\textbf{f)}] \textbf{Welche \"Anderung w\"urden Sie
           vornehmen, um den oben beschriebenen Algorithmus
