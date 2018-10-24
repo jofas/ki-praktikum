@@ -75,11 +75,12 @@
      <Compile Include="Assets\Scripts\GA\Genes\IGene.cs" />
      <Compile Include="Assets\Scripts\GA\Initializers\AInit.cs" />
      <Compile Include="Assets\Scripts\GA\Initializers\IInitializer.cs" />
-     <Compile Include="Assets\Scripts\GA\Initializers\InitRecursive.cs" />
+     <Compile Include="Assets\Scripts\GA\Initializers\InitRecursiveCheat.cs" />
      <Compile Include="Assets\Scripts\GA\Initializers\RandomInitializer.cs" />
      <Compile Include="Assets\Scripts\GA\Mutators\DummyMutator.cs" />
      <Compile Include="Assets\Scripts\GA\Mutators\IMutator.cs" />
      <Compile Include="Assets\Scripts\GA\Mutators\RandomMutator.cs" />
+     <Compile Include="Assets\Scripts\GA\Mutators\RandomMutatorCheat.cs" />
      <Compile Include="Assets\Scripts\GA\Mutators\SwapMutationWithRRs.cs" />
      <Compile Include="Assets\Scripts\GA\Recombiners\DummyRecombiner.cs" />
      <Compile Include="Assets\Scripts\GA\Recombiners\IRecombiner.cs" />

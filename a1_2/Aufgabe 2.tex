@@ -1,0 +1,112 @@
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\begin{frame}
+  \begin{center}
+    \Huge{Praktikum K\"unstliche Intelligenz} \\
+    \vspace{1.5cm}
+    \huge{Team D Rot} \\
+    \vspace{1.5cm}
+    \Large{Aufgabe 1.2}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
+  \begin{itemize}
+    \item \textbf{Selektor:} Random Rejection
+    \item \textbf{Erklärung:} Wir wählen einen zufälliges Individuum unserer Population. Der Fitnesswert 		muss größer oder gleich  einem zweiten zufälligen Fitnesswert, welcher in einem Bereich zwischen dem 		schlechtesten und besten Fitnesswert der Population liegt, sein. 
+   \item \textbf{Entscheidungsgrund:} Durch die zwei Zufallskomponenten entfällt bei einer Selektion 			nach gewichteten Wahrscheinlichkeiten die Erstellung eines großen Pools.
+   
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
+  \begin{itemize}
+    \item \textbf{Mutator:} Swap-Mutator mit Random Resetting
+    \item \textbf{Erklärung:} Wir wählen mit einer 2 $\%$-igen Wahrscheinlichkeit zwei verschiedene Gene innerhalb einer Sequenz und tauschen diese. Danach wird mit einer 1 $\%$-igen Wahrscheinlichkeit jedes Gen innerhalb dieser Sequenz mutiert.
+    \item \textbf{Entscheidungsgrund:} Eine zweite Implementation war Pflicht.
+   
+   
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
+  \begin{itemize}
+    \item \textbf{Terminator:} IndividualHigherThan
+    \item \textbf{Erklärung:} Beendet den Algorithmus, sobald die gewünschte Genauigkeit, ausgedrückt in Scorepunkten, erreicht wird.
+    \item \textbf{Entscheidungsgrund:} Wir wollten ein möglichst gutes Ergebnis erzielen.
+   
+   
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
+  \begin{itemize}
+    \item \textbf{Initializer:} InitRecursiveCheat 
+    \item \textbf{Erklärung:} Setzt min. das letzte Gen auf Bremsen
+    \item \textbf{Entscheidungsgrund:} Unser Auto fährt meistens wieder aus der Lücke.
+   
+   
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{b)} Fitnessfunktion}
+
+  Sei $S_{max}$ perfektes Individuum (Gensequenz) mit einem Highscore von 10000. \\
+
+  Wir wollen unsere Individuen an $S_{max}$ annähern.
+ \begin{itemize}
+    \item \textbf{NumberOfCollision:} wenn $ != 0 $, Fitnesswert = 0;
+    \item \textbf{DistanceFromGoal:} $Fehlerwert$ * 1000
+    \item \textbf{AngleToGoal:} $Fehlerwert$ * 2000
+    \item \textbf{CurrentVelocity:} $Fehlerwert$ * 400
+    \item \textbf{Entscheidung:} Wir möchten keine Sequenzen haben, die gegen andere Autos fahren. Der Winkel ist so hoch bewertet wurden, da das Auto sonst halb in der zweiten Reihe parkt und die Distanz zum Zielpunkt soll ebenfalls möglichst gering ausfallen.
+   
+   
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{\textbf{c)} Gene a)}
+  \begin{itemize}
+    \item \textbf{GeneS:} Lenkung: Vorwärts, Beschleunigung: Vorwärt
+    \item \textbf{GeneT:} Lenkung: Vorwärts, Beschleunigung: Rückwärts
+    \item \textbf{GeneU:} Bremsen anziehen
+    \item \textbf{GeneV:} Lenkung: Links, Beschleunigung: Vorwärt
+    \item \textbf{GeneW:} Lenkung: Links, Beschleunigung: Rückwärts
+    \item \textbf{GeneX:} Lenkung: Rechts, Beschleunigung: Vorwärt
+    \item \textbf{GeneY:} Lenkung: Rechts, Beschleunigung: Rückwärts
+  
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{c)} Gene b)}
+  \begin{itemize}
+    
+    \item \textbf{Entscheidung:} Jedes Gen, ausgenommen U, ist eine Kombination aus einer Richtung (1,0,-1) und der Vorwärts- bzw. R\"uckw\"artsbeschleunigung (1,-1). Durch die Kombination aus einer Bewegung und einer Richtung entfallen unnötige Sequenzen, die nur richtungswechselnde Gene enthalten.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{d)} Einsch\"atzung zur Optimierung}
+  Zur Optimierung könnte man das letze Gen einer Sequenz mit Bremsen hardcoden, damit das Auto nicht wieder aus der Parklücke herausfährt.
+  Die Berechnung des Fitnesswertes und die Rekombination bzw. Mutation könnte parallel ausgeführt werden.
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{e)} In Realit\"at anwendbar?}
+  Unsere Lösung könnte übernommen werden, falls der Fahrer viel Zeit mitbringt um eine Simulation durchzuführen. ;)   Wir vermuten, dass eine wesentlich längere Gensequenz und ein größerer Pool eine Möglichkeit sein könnte bei erhöhter Parallelisierung.
+\end{frame}
+
+\end{document}

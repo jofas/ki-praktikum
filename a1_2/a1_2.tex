@@ -19,15 +19,19 @@
   \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
   \begin{itemize}
     \item \textbf{Selektor:} Random Rejection
-          TODO: Beschreibung?
-    \item \textbf{Rekombinator:} Single-Point-Crossover
-    \item \textbf{Mutator:}
-      \begin{enumerate}
-        \item Tauscht zuf\"allig zwei Gene des Individuums
-        \item Iteriere Gene des Individuums. F\"ur jedes
-              Gen 1\%-ige Chance, dass es mutiert (random)
-      \end{enumerate}
-    \item \textbf{Initializer:} Random Initializer
+    \item \textbf{Erklärung:} Wir wählen einen zufälliges Individuum unserer Population. Der Fitnesswert 		muss größer oder gleich  einem zweiten zufälligen Fitnesswert, welcher in einem Bereich zwischen dem 		schlechtesten und besten Fitnesswert der Population liegt, sein. 
+   \item \textbf{Entscheidungsgrund:} Durch die zwei Zufallskomponenten, entfällt bei einer Selektion 			nach gewichteten Wahrscheinlichkeiten die Erstellung eines großen Pools.
+   
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
+  \begin{itemize}
+    \item \textbf{Mutator:} Swap-Mutator mit Random Resetting
+    \item Wir wählen einen zufälliges Individuum unserer Population. Der Fitnesswert muss größer oder gleich  einem zweiten zufälligen Fitnesswert, welcher in einem Bereich zwischen dem schlechtesten und besten Fitnesswert der Population liegt, sein. 
+   
+   
   \end{itemize}
 \end{frame}
 
@@ -75,3 +79,10 @@
 \end{frame}
 
 \end{document}
+ \item \textbf{Rekombinator:} Single-Point-Crossover
+    \item \textbf{Mutator:}
+      \begin{enumerate}
+        \item Tauscht zuf\"allig zwei Gene des Individuums
+        \item Iteriere Gene des Individuums. F\"ur jedes
+              Gen 1\%-ige Chance, dass es mutiert (random)
+      \end{enumerate}

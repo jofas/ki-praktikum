@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="Windows-1252"?>
-<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CarInstances="50" GenerationSize="200" SequenceLength="10" GeneDuration="10">
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CarInstances="200" GenerationSize="200" SequenceLength="10" GeneDuration="25">
   <FileLocation>settings.xml</FileLocation>
   <Genes>
     <Gene>GeneA</Gene>
@@ -31,10 +31,10 @@
   </SelectedGenes>
   <Initializers>
     <Initializer>AInit</Initializer>
-    <Initializer>InitRecursive</Initializer>
+    <Initializer>InitRecursiveCheat</Initializer>
     <Initializer>RandomInitializer</Initializer>
   </Initializers>
-  <SelectedInitializer>InitRecursive</SelectedInitializer>
+  <SelectedInitializer>InitRecursiveCheat</SelectedInitializer>
   <FitnessFunctions>
     <FitnessFunctions>DummyFitness</FitnessFunctions>
     <FitnessFunctions>HighestFitness</FitnessFunctions>
@@ -55,9 +55,10 @@
   <Mutators>
     <Mutator>DummyMutator</Mutator>
     <Mutator>RandomMutator</Mutator>
+    <Mutator>RandomMutatorCheat</Mutator>
     <Mutator>SwapMutationWithRRs</Mutator>
   </Mutators>
-  <SelectedMutator>SwapMutationWithRRs</SelectedMutator>
+  <SelectedMutator>RandomMutatorCheat</SelectedMutator>
   <Terminators>
     <Terminator>DummyTerminator</Terminator>
     <Terminator>IndividualHigherThan</Terminator>
