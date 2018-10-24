@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IndividualHigherThan : ITerminator
 {
-    private readonly float maxFitness = 9800;
+    private readonly float maxFitness = 9750;
 
     public bool JudgementDay(GenerationDB.Generation generation)
     {

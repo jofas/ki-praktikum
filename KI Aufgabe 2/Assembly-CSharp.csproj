@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\GA\Recombiners\DummyRecombiner.cs" />
      <Compile Include="Assets\Scripts\GA\Recombiners\IRecombiner.cs" />
      <Compile Include="Assets\Scripts\GA\Recombiners\SPCOCombiner.cs" />
+     <Compile Include="Assets\Scripts\GA\Recombiners\SPCOCombinerCheat.cs" />
      <Compile Include="Assets\Scripts\GA\Recombiners\UniformCrossover.cs" />
      <Compile Include="Assets\Scripts\GA\Selectors\DummySelector.cs" />
      <Compile Include="Assets\Scripts\GA\Selectors\ISelector.cs" />

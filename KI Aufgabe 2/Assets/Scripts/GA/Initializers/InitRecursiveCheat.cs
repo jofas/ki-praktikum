@@ -31,23 +31,19 @@ public class InitRecursiveCheat : IInitializer
         Individual ind = new Individual();
 
         System.Text.StringBuilder builder = new System.Text.StringBuilder(individualSize);
-        builder.Append(CreateSequence(individualSize,individualSize));
+        builder.Append(CreateSequence(individualSize));
         ind.GeneSequence = builder.ToString();
         return ind;
     }
 
 
-    string CreateSequence(int indisize,int originalSize)
+    string CreateSequence(int indisize)
     {
         if (indisize == 1) { return "U"; }
-        else if(indisize < 4 && originalSize > 7)
-        {
-            return "U" + CreateSequence(indisize-1);
-        }
-        else
-        {
-            return genes[UnityEngine.Random.Range(0, genes.Count)]+ CreateSequence(indisize - 1) ;
-        }
+       
+       
+      return genes[UnityEngine.Random.Range(0, genes.Count)]+ CreateSequence(indisize - 1) ;
+        
     }
 
 }

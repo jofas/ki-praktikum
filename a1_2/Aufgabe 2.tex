@@ -53,7 +53,7 @@
   \frametitle{\textbf{a)} Wahl der Varianten/Optionen}
   \begin{itemize}
     \item \textbf{Initializer:} InitRecursiveCheat 
-    \item \textbf{Erklärung:} Setzt min. das letzte Gen auf Bremsen
+    \item \textbf{Erklärung:} Setzt das letzte Gen auf Bremsen, alle übrigen werden aus dem Pool genommen.
     \item \textbf{Entscheidungsgrund:} Unser Auto fährt meistens wieder aus der Lücke.
    
    
@@ -106,7 +106,9 @@
 
 \begin{frame}
   \frametitle{\textbf{e)} In Realit\"at anwendbar?}
-  Unsere Lösung könnte übernommen werden, falls der Fahrer viel Zeit mitbringt um eine Simulation durchzuführen. ;)   Wir vermuten, dass eine wesentlich längere Gensequenz und ein größerer Pool eine Möglichkeit sein könnte bei erhöhter Parallelisierung.
+  Unsere Lösung könnte übernommen werden, falls der Fahrer viel Zeit mitbringt um eine Simulation durchzuführen und die Abweichung unserer Fitnessfunktion zur perfekten Position fast 0 beträgt. (Äußere Einflussfaktoren schließen wir aus)\newline
+Wir vermuten, dass ein hoher Grad an Parallelisierung und bessere Rechenleistung dieses Zeitproblem lösen könnte. 
+ Auf wechselnde äußere Einflussfaktoren zu reagieren würde mit dieser Implementierung nicht schaffbar sein.
 \end{frame}
 
 \end{document}

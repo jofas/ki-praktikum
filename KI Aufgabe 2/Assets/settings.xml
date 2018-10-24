@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="Windows-1252"?>
-<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CarInstances="200" GenerationSize="200" SequenceLength="10" GeneDuration="25">
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CarInstances="200" GenerationSize="400" SequenceLength="10" GeneDuration="25">
   <FileLocation>settings.xml</FileLocation>
   <Genes>
     <Gene>GeneA</Gene>
@@ -16,11 +16,6 @@
     <Gene>GeneY</Gene>
   </Genes>
   <SelectedGenes>
-    <Setting>GeneA</Setting>
-    <Setting>GeneB</Setting>
-    <Setting>GeneC</Setting>
-    <Setting>GeneD</Setting>
-    <Setting>GeneE</Setting>
     <Setting>GeneS</Setting>
     <Setting>GeneT</Setting>
     <Setting>GeneU</Setting>
@@ -49,9 +44,10 @@
   <Recombiners>
     <Recombiner>DummyRecombiner</Recombiner>
     <Recombiner>SPCOCombiner</Recombiner>
+    <Recombiner>SPCOCombinerCheat</Recombiner>
     <Recombiner>UniformCrossover</Recombiner>
   </Recombiners>
-  <SelectedRecombiner>SPCOCombiner</SelectedRecombiner>
+  <SelectedRecombiner>SPCOCombinerCheat</SelectedRecombiner>
   <Mutators>
     <Mutator>DummyMutator</Mutator>
     <Mutator>RandomMutator</Mutator>
