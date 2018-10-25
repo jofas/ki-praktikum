@@ -140,7 +140,7 @@
           dieses Individuum in unser zuf\"allig generierten
           ersten Generation bereits ein- oder mehrmals
           enthalten ist?}
-
+0.0001046573547
         Die Anzahl an Individuen unserer ersten Population
         $\mathbb{P}$ betr\"agt 1000.
 
@@ -148,10 +148,10 @@
         liegt damit bei:
 
         \begin{align*}
-          p(S_{max}) &= \frac{1}{|G|^{8}} = \frac{1}{4^8}
-                     = \frac{1}{65536} \\
-          p(S_{max} \in \mathbb{P}) &= \frac{|P|}{|G|^{8}}
-                     =\frac{1000}{4^8} = \frac{1000}{65536}
+         P(x=1) = \binom{1000}{1} \cdot ((\frac{1}{4})^8)^1 \cdot (1 - (\frac{1}{4})^8)^{999} = 0.015028
+          \end{align*}
+           \begin{align*}
+          P(x=2) = \binom{1000}{2} \cdot ((\frac{1}{4})^8)^2 \cdot (1 - (\frac{1}{4})^8)^{998} = 0.0001046573547
         \end{align*}
 
   \item[\textbf{e)}] \textbf{Welche Gefahr best\"unde, wenn
